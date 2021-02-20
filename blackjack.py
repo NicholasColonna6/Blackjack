@@ -93,26 +93,26 @@ def blackjack():
 
         
         if hand_value(dealer) == 21 and hand_value(player) == 21:   #Draw if both player and dealer dealt Blackjack
-            print("\nDealer: {}".format(dealer))
-            print("Player: {}".format(player))
+            print("\nDealer: {} - {}".format(hand_value(dealer), dealer))
+            print("Player: {} - {}".format(hand_value(player), player))
             print("\nDRAW! Both you and the Dealer have Blackjack.")
             playing = play_again()      
             continue
         elif hand_value(dealer) == 21:      #Player loses if dealer is dealt Blackjack
-            print("\nDealer: {}".format(dealer))
-            print("Player: {}".format(player))
+            print("\nDealer: {} - {}".format(hand_value(dealer), dealer))
+            print("Player: {} - {}".format(hand_value(player), player))
             print("\nLOSER! Dealer has Blackjack.")
             playing = play_again()      
             continue
         elif hand_value(player) == 21:      #Player wins if dealt Blackjack
-            print("\nDealer: {}".format(dealer))
-            print("Player: {}".format(player))
+            print("\nDealer: {} - {}".format(hand_value(dealer), dealer))
+            print("Player: {} - {}".format(hand_value(player), player))
             print("\nWINNER! You have BLACKJACK!")
             playing = play_again()
             continue
 
-        print("\nDealer: {}".format(['??', dealer[1]]))     #Dealer's first card is always dealt face down
-        print("Player: {}".format(player))
+        print("\nDealer: {} - {}".format(hand_value(dealer[1:]), ['??', dealer[1]]))     #Dealer's first card is always dealt face down
+        print("Player: {} - {}".format(hand_value(player), player))
 
         # Player's turn: Loop until player either busts or elects to stay
         while bust == False and stay == False:
@@ -122,7 +122,7 @@ def blackjack():
                 break
             elif choice.upper() == "H":     #if player elects to hit, add another card to hand
                 player.append(card_deck.pop())
-                print("\nPlayer: {}".format(player))
+                print("Player: {} - {}".format(hand_value(player), player))
             else:   #invalid input
                 print("\nSorry, that was not a valid input.")
                 continue
@@ -138,11 +138,11 @@ def blackjack():
             continue
 
         # Deal final cards to the dealer until the dealer's hand is greater than or equal to 17
-        print("\nDealer: {}".format(dealer))
+        print("\nDealer: {} - {}".format(hand_value(dealer), dealer))
         while hand_value(dealer) < 17:
             time.sleep(1)
             dealer.append(card_deck.pop())
-            print("Dealer: {}".format(dealer))
+            print("Dealer: {} - {}".format(hand_value(dealer), dealer))
 
         time.sleep(1)
         if hand_value(dealer) > 21:                         #dealer busts

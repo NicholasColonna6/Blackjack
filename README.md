@@ -17,6 +17,6 @@ The Player is competing against the Dealer to be the closest to 21 without going
 ### Future Enhancements:
 * Allow user the option to Split or Double Down their hand, similar to the real casino game
   * Implement a betting system
-* Implement a score keeper to print the current value of the hand next to the cards
+* ~~Implement a score keeper to print the current value of the hand next to the cards~~
 * Allow user the ability to keep playing with the same deck of cards or reshuffle
 * Allow user the ability to specify the number of decks used in the game
