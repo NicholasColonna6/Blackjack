@@ -15,7 +15,7 @@ The Player is competing against the Dealer to be the closest to 21 without going
 7. Player can opt to play again 'Y' or end game 'N' when prompted
 
 ### Future Enhancements:
-* Allow user the option to Split or Double Down their hand, similar to the real casino game
+* Allow user the option to Split or ~~Double Down~~ their hand, similar to the real casino game
   * Implement a betting system
 * ~~Implement a score keeper to print the current value of the hand next to the cards~~
 * Allow user the ability to keep playing with the same deck of cards or reshuffle

@@ -116,13 +116,24 @@ def blackjack():
 
         # Player's turn: Loop until player either busts or elects to stay
         while bust == False and stay == False:
-            choice = input("\nWould you like to Hit or Stay? (H / S): ")
+            if len(player) == 2:
+                choice = input("\nWould you like to Hit, Double Down, or Stay? (H / D / S): ")
+            else:
+                choice = input("\nWould you like to Hit or Stay? (H / S): ")
+            
             if choice.upper() == "S":   #if player elects to stay, turn is over
                 stay = True
                 break
             elif choice.upper() == "H":     #if player elects to hit, add another card to hand
                 player.append(card_deck.pop())
                 print("Player: {} - {}".format(hand_value(player), player))
+            elif choice.upper() == "D" and len(player) == 2:
+                player.append(card_deck.pop())
+                print("Player Doubled Down")
+                time.sleep(1)
+                print("Player: {} - {}".format(hand_value(player), player))
+                stay = True
+                break
             else:   #invalid input
                 print("\nSorry, that was not a valid input.")
                 continue
